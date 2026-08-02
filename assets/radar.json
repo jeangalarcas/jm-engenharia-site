@@ -2,53 +2,53 @@
   "atualizado": "2026-08-02",
   "itens": [
     {
-      "tag": "Prazo",
-      "titulo": "Reforma tributária: a partir de 03/08 notas fiscais eletrônicas só serão autorizadas com os campos de IBS e CBS preenchidos (alíquota teste de 1%)",
-      "fonte": "Comitê Gestor do IBS (CGIBS)",
-      "data": "jun/2026",
-      "url": "https://www.cgibs.gov.br/novo-marco-da-reforma-tributaria-inicia-em-03-de-agosto-com-preenchimento-obrigatorio-dos-campos-relativos-ao-ibs-e-a-cbs"
+      "tag": "Lei",
+      "titulo": "STF julga em agosto as ADIs contra a Lei Geral do Licenciamento Ambiental (Lei 15.190/2025); estados defendem salvaguardas da Carta de Brasília",
+      "fonte": "Consultor Jurídico",
+      "data": "jul/2026",
+      "url": "https://www.conjur.com.br/2026-jul-25/o-julgamento-que-vai-marcar-o-licenciamento-ambiental-brasileiro/"
     },
     {
-      "tag": "Municípios",
-      "titulo": "REURB: avança no Senado o PL 972/2025, que permite concessão da regularização fundiária à iniciativa privada e novas regras de reassentamento",
-      "fonte": "Agência Senado",
+      "tag": "Prazo",
+      "titulo": "Publicado no DOU o cronograma de obrigatoriedade de emissão dos documentos fiscais da Reforma Tributária (Ato Conjunto RFB/CGIBS 4/2026)",
+      "fonte": "Confederação Nacional de Municípios",
       "data": "jul/2026",
-      "url": "https://www12.senado.leg.br/noticias/materias/2026/07/07/ccj-vai-avaliar-novas-regras-para-regularizacao-fundiaria-urbana"
+      "url": "https://cnm.org.br/comunicacao/noticias/publicado-o-cronograma-de-emissao-dos-documentos-fiscais-da-reforma-tributaria"
+    },
+    {
+      "tag": "Tributário",
+      "titulo": "CNM debate o papel do Sinter e do Cadastro Imobiliário Brasileiro (CIB) na implementação da Reforma Tributária nos municípios",
+      "fonte": "Confederação Nacional de Municípios",
+      "data": "jul/2026",
+      "url": "https://cnm.org.br/comunicacao/noticias/bate-papo-cnm-discute-cadastro-imobiliario-brasileiro-na-reforma-tributaria"
+    },
+    {
+      "tag": "Saneamento",
+      "titulo": "ANA realiza ciclo de oficinas sobre a implementação da reforma tributária no setor de saneamento básico",
+      "fonte": "Agência Nacional de Águas e Saneamento Básico",
+      "data": "jul/2026",
+      "url": "https://www.gov.br/ana/pt-br/assuntos/noticias-e-eventos/noticias-periodo-eleitoral-2026/ana-realiza-ciclo-de-oficinas-sobre-implementacao-da-reforma-tributaria-no-setor-de-saneamento-basico"
     },
     {
       "tag": "Clima",
-      "titulo": "Câmara aprova créditos extraordinários de R$ 285 milhões para defesa civil e recuperação de municípios atingidos por desastres climáticos",
-      "fonte": "Agência Brasil",
-      "data": "jul/2026",
-      "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-07/camara-aprova-creditos-extras-para-defesa-civil-e-meio-ambiente"
+      "titulo": "Lançado o primeiro Boletim do Painel El Niño 2026-2027, com potenciais impactos e orientações de proteção e defesa civil",
+      "fonte": "Cemaden/MCTI",
+      "data": "jun/2026",
+      "url": "https://www.gov.br/cemaden/pt-br/assuntos/noticias-cemaden/lancado-o-primeiro-boletim-do-painel-do-el-nino-2026-2027-apresentando-potenciais-impactos-e-orientacoes"
     },
     {
-      "tag": "Lei",
+      "tag": "Municípios",
+      "titulo": "Cemaden amplia a rede nacional de alertas de desastres e inclui 162 novas cidades no monitoramento",
+      "fonte": "Ministério da Ciência, Tecnologia e Inovação",
+      "data": "mai/2026",
+      "url": "https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/noticias/2026/05/cemaden-amplia-monitoramento-e-inclui-162-cidades-na-rede-de-alertas"
+    },
+    {
+      "tag": "Análise",
       "titulo": "Nova Lei Geral do Licenciamento Ambiental (Lei 15.190/2025) em vigor: modalidades LAC, LAU e LAE e prazo máximo de análise de 12 meses",
       "fonte": "Demarest Advogados",
       "data": "fev/2026",
       "url": "https://www.demarest.com.br/lei-geral-do-licenciamento-ambiental/"
-    },
-    {
-      "tag": "Análise",
-      "titulo": "Desburocratizar sem destruir: desafios e controvérsias da nova lei de licenciamento ambiental",
-      "fonte": "Consultor Jurídico",
-      "data": "abr/2026",
-      "url": "https://www.conjur.com.br/2026-abr-08/desburocratizar-sem-destruir-desafios-e-controversias-da-nova-lei-ambiental/"
-    },
-    {
-      "tag": "Tributário",
-      "titulo": "Reforma tributária: CNM publica nota técnica sobre a atualização da Planta Genérica de Valores (PGV) do IPTU",
-      "fonte": "Confederação Nacional de Municípios",
-      "data": "2025",
-      "url": "https://cnm.org.br/comunicacao/noticias/reforma-tributaria-atualizacao-da-planta-de-valores-genericos-do-iptu-e-tema-de-nota-tecnica"
-    },
-    {
-      "tag": "Saneamento",
-      "titulo": "Cinco anos do novo marco legal do saneamento: avanços, ajustes e as metas de 99% de água e 90% de esgoto até 2033",
-      "fonte": "Agência Gov",
-      "data": "jul/2025",
-      "url": "https://agenciagov.ebc.com.br/noticias/202507/cinco-anos-das-alteracoes-ao-marco-legal-do-saneamento-avancos-ajustes-e-metas-para-2033"
     }
   ]
 }
