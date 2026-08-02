@@ -2,6 +2,27 @@
   "atualizado": "2026-08-02",
   "itens": [
     {
+      "tag": "Prazo",
+      "titulo": "Reforma tributária: a partir de 03/08 notas fiscais eletrônicas só serão autorizadas com os campos de IBS e CBS preenchidos (alíquota teste de 1%)",
+      "fonte": "Comitê Gestor do IBS (CGIBS)",
+      "data": "jun/2026",
+      "url": "https://www.cgibs.gov.br/novo-marco-da-reforma-tributaria-inicia-em-03-de-agosto-com-preenchimento-obrigatorio-dos-campos-relativos-ao-ibs-e-a-cbs"
+    },
+    {
+      "tag": "Municípios",
+      "titulo": "REURB: avança no Senado o PL 972/2025, que permite concessão da regularização fundiária à iniciativa privada e novas regras de reassentamento",
+      "fonte": "Agência Senado",
+      "data": "jul/2026",
+      "url": "https://www12.senado.leg.br/noticias/materias/2026/07/07/ccj-vai-avaliar-novas-regras-para-regularizacao-fundiaria-urbana"
+    },
+    {
+      "tag": "Clima",
+      "titulo": "Câmara aprova créditos extraordinários de R$ 285 milhões para defesa civil e recuperação de municípios atingidos por desastres climáticos",
+      "fonte": "Agência Brasil",
+      "data": "jul/2026",
+      "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-07/camara-aprova-creditos-extras-para-defesa-civil-e-meio-ambiente"
+    },
+    {
       "tag": "Lei",
       "titulo": "Nova Lei Geral do Licenciamento Ambiental (Lei 15.190/2025) em vigor: modalidades LAC, LAU e LAE e prazo máximo de análise de 12 meses",
       "fonte": "Demarest Advogados",
@@ -9,11 +30,11 @@
       "url": "https://www.demarest.com.br/lei-geral-do-licenciamento-ambiental/"
     },
     {
-      "tag": "Municípios",
-      "titulo": "Os desafios da nova lei de licenciamento ambiental para os municípios",
+      "tag": "Análise",
+      "titulo": "Desburocratizar sem destruir: desafios e controvérsias da nova lei de licenciamento ambiental",
       "fonte": "Consultor Jurídico",
-      "data": "out/2025",
-      "url": "https://www.conjur.com.br/2025-out-06/a-nova-lei-de-licenciamento-ambiental-e-os-desafios-para-os-municipios/"
+      "data": "abr/2026",
+      "url": "https://www.conjur.com.br/2026-abr-08/desburocratizar-sem-destruir-desafios-e-controversias-da-nova-lei-ambiental/"
     },
     {
       "tag": "Tributário",
@@ -28,20 +49,6 @@
       "fonte": "Agência Gov",
       "data": "jul/2025",
       "url": "https://agenciagov.ebc.com.br/noticias/202507/cinco-anos-das-alteracoes-ao-marco-legal-do-saneamento-avancos-ajustes-e-metas-para-2033"
-    },
-    {
-      "tag": "Clima",
-      "titulo": "Cemaden amplia a rede nacional de alertas de desastres e inclui 162 novas cidades no monitoramento",
-      "fonte": "Ministério da Ciência, Tecnologia e Inovação",
-      "data": "mai/2026",
-      "url": "https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/noticias/2026/05/cemaden-amplia-monitoramento-e-inclui-162-cidades-na-rede-de-alertas"
-    },
-    {
-      "tag": "Análise",
-      "titulo": "A nova Lei Geral do Licenciamento Ambiental revogou a Resolução Conama 01/86? Entenda o debate",
-      "fonte": "Buzaglo Dantas Advogados",
-      "data": "abr/2026",
-      "url": "https://buzaglodantas.adv.br/2026/04/16/a-nova-lei-geral-do-licenciamento-ambiental-revogou-a-resolucao-conama-01-86/"
     }
   ]
 }
