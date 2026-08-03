@@ -58,7 +58,7 @@
     img{max-width:100%;display:block}
     a{color:inherit;text-decoration:none}
     ul{list-style:none}
-    .container{width:min(1400px,94%);margin-inline:auto}
+    .container{width:min(1720px,94%);margin-inline:auto}
     section{padding:84px 0}
     .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin-bottom:14px}
     .eyebrow::before{content:"";width:26px;height:2px;background:var(--green);border-radius:2px}
@@ -128,14 +128,14 @@
       radial-gradient(900px 600px at -10% 110%,rgba(63,174,99,.20),transparent 55%),
       linear-gradient(150deg,#0d2342 0%,#173a66 55%,#124d33 130%)}
     .hero::before{content:"";position:absolute;inset:0;opacity:.5;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='700' height='700' viewBox='0 0 700 700'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.06' stroke-width='1.4'%3E%3Cpath d='M60 640c80-120 40-200 120-260s180-20 240-100 20-180 120-220'/%3E%3Cpath d='M20 600c90-110 60-190 140-250s190-30 250-110 30-170 130-210'/%3E%3Cpath d='M100 680c70-130 20-210 100-270s170-10 230-90 10-190 110-230'/%3E%3Ccircle cx='560' cy='140' r='60'/%3E%3Ccircle cx='560' cy='140' r='95'/%3E%3Ccircle cx='560' cy='140' r='130'/%3E%3C/g%3E%3C/svg%3E")}
-    .hero-inner{position:relative;text-align:center;max-width:960px;margin-inline:auto}
+    .hero-inner{position:relative;text-align:center;max-width:1060px;margin-inline:auto}
     .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);color:#d6f5e2;font-size:.8rem;font-weight:600;letter-spacing:.06em;padding:8px 16px;border-radius:999px;margin-bottom:24px;backdrop-filter:blur(4px)}
     .hero-badge .dot{width:8px;height:8px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 4px rgba(74,222,128,.25);animation:pulse 2s infinite}
     @keyframes pulse{50%{box-shadow:0 0 0 8px rgba(74,222,128,.05)}}
     .hero h1{color:#fff;font-size:clamp(1.9rem,4.2vw,3.2rem);margin-bottom:18px}
     .hero h1 em{font-style:normal;background:linear-gradient(90deg,#7ee2a8,#3ec9b8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
     .hero p{color:#c9d8ec;font-size:1.1rem;max-width:680px;margin:0 auto 38px}
-    .seg-cards{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:880px;margin-inline:auto}
+    .seg-cards{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:960px;margin-inline:auto}
     .seg-card{position:relative;text-align:left;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:22px;padding:28px;cursor:pointer;transition:.3s;backdrop-filter:blur(8px);overflow:hidden}
     .seg-card::after{content:"";position:absolute;inset:auto -40px -40px auto;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(126,226,168,.25),transparent 70%);transition:.3s}
     .seg-card:hover{transform:translateY(-5px);background:rgba(255,255,255,.14);border-color:rgba(126,226,168,.5)}
@@ -224,6 +224,8 @@
     .c-card .ic{flex:none;width:46px;height:46px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(126,226,168,.2),rgba(62,201,184,.2));color:#7ee2a8}
     .c-card b{display:block;font-size:.92rem}
     .c-card span{font-size:.85rem;color:#b9c9de}
+    .li-badge{background:#fff;border-radius:18px;padding:16px;display:flex;justify-content:center;box-shadow:var(--shadow)}
+    .li-badge:empty{display:none}
     form{background:#fff;border-radius:24px;padding:36px 32px;box-shadow:var(--shadow-lg)}
     form h3{font-size:1.2rem;margin-bottom:6px}
     form>p{font-size:.88rem;color:var(--ink-soft);margin-bottom:22px}
@@ -380,7 +382,7 @@
       <div class="dem-grid">
 
         <article class="dem">
-          <div class="dem-img"><img src="assets/img-drone.jpg" alt="Drone de mapeamento em voo sobre área rural" loading="lazy"></div>
+          <div class="dem-img"><img src="assets/Cartografia%20e%20Gest%C3%A3o%20Territorial.png" alt="Operador com drone, GNSS e tablet mapeando área urbana e rural" loading="lazy"></div>
           <button class="dem-head" aria-expanded="false">
             <span class="tt"><h3>Cartografia e gestão territorial</h3><p>Mapeamento das áreas urbanas e rurais e de seus detalhes físicos, naturais e antrópicos.</p></span>
             <svg class="chev" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
@@ -394,7 +396,7 @@
         </article>
 
         <article class="dem">
-          <div class="dem-img"><img src="assets/img-aereo.jpg" alt="Vista aérea de área urbana em expansão" loading="lazy"></div>
+          <div class="dem-img"><img src="assets/PLANO%20DIRETOR%20E%20ZONEAMENTO.png" alt="Equipe técnica analisando mapas de zoneamento e maquete urbana" loading="lazy"></div>
           <button class="dem-head" aria-expanded="false">
             <span class="tt"><h3>Plano Diretor e zoneamento</h3><p>Planejamento urbano e territorial com base técnica sólida e aderente à legislação.</p></span>
             <svg class="chev" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
@@ -408,7 +410,7 @@
         </article>
 
         <article class="dem">
-          <div class="dem-img"><img src="assets/img-controle.jpg" alt="Tela de controle com mapeamento georreferenciado" loading="lazy"></div>
+          <div class="dem-img"><img src="assets/Gest%C3%A3o%20Tribut%C3%A1ria%20Municipal.png" alt="Sistema de gestão tributária com mapa de valores e dashboards de arrecadação" loading="lazy"></div>
           <button class="dem-head" aria-expanded="false">
             <span class="tt"><h3>Gestão tributária municipal</h3><p>Justiça fiscal e recuperação de receita com cadastro atualizado e avaliação correta.</p></span>
             <svg class="chev" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
@@ -422,7 +424,7 @@
         </article>
 
         <article class="dem">
-          <div class="dem-img"><img src="assets/img-hidro.jpg" alt="Modelagem tridimensional de recursos hídricos" loading="lazy"></div>
+          <div class="dem-img"><img src="assets/INFRAESTRUTURA%20e%20SANEAMENTO.png" alt="Obra de rede de água e estação de tratamento com equipe técnica" loading="lazy"></div>
           <button class="dem-head" aria-expanded="false">
             <span class="tt"><h3>Infraestrutura e saneamento</h3><p>Levantamentos, estudos e consultoria técnica para obras urbanas e rurais.</p></span>
             <svg class="chev" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
@@ -436,7 +438,7 @@
         </article>
 
         <article class="dem">
-          <div class="dem-img"><img src="assets/img-marco.jpg" alt="Marco de demarcação implantado em campo" loading="lazy"></div>
+          <div class="dem-img"><img src="assets/LICENCIAMENTO_PER%C3%8DCIA%20e%20REURB.png" alt="Equipe da JM em vistoria de REURB com laudos e projeto aprovado" loading="lazy"></div>
           <button class="dem-head" aria-expanded="false">
             <span class="tt"><h3>Licenciamento, perícias e REURB</h3><p>Suporte técnico ambiental e regularização fundiária de interesse social e específico.</p></span>
             <svg class="chev" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
@@ -450,7 +452,7 @@
         </article>
 
         <article class="dem">
-          <div class="dem-img"><img src="assets/img-3d.jpg" alt="Modelo digital de terreno com áreas de drenagem" loading="lazy"></div>
+          <div class="dem-img"><img src="assets/Resili%C3%AAncia%20Clim%C3%A1tica%20e%20Monitoramento.png" alt="Central de monitoramento com alertas de eventos extremos e simulação de bacia" loading="lazy"></div>
           <button class="dem-head" aria-expanded="false">
             <span class="tt"><h3>Resiliência climática e monitoramento</h3><p>Preparação do município para enchentes, estiagens, vendavais e outros eventos extremos.</p></span>
             <svg class="chev" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
@@ -464,7 +466,7 @@
         </article>
 
         <article class="dem">
-          <div class="dem-img"><img src="assets/img-campo.jpg" alt="Equipe em campo coletando dados com drone" loading="lazy"></div>
+          <div class="dem-img"><img src="assets/Sistema%20WEBGIS%20de%20Gest%C3%A3o.PNG" alt="Portal WebGIS de gestão territorial com camadas de zoneamento e tributação" loading="lazy"></div>
           <button class="dem-head" aria-expanded="false">
             <span class="tt"><h3>Sistemas WebGIS de gestão</h3><p>Plataformas com cartografia e dados georreferenciados para o dia a dia da gestão.</p></span>
             <svg class="chev" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
@@ -691,9 +693,16 @@
           <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span>
           <div><b>Instagram</b><span>@jm_consultoria</span></div>
         </a>
+        <a class="c-card" href="https://br.linkedin.com/in/jean-galar%C3%A7a-41763a180" target="_blank" rel="noopener">
+          <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/></svg></span>
+          <div><b>LinkedIn</b><span>Jean Galarça — perfil profissional</span></div>
+        </a>
         <div class="c-card">
           <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.4 8 12 8 12s8-6.6 8-12a8 8 0 0 0-8-8z"/></svg></span>
           <div><b>Área de atuação</b><span>Sede no Rio Grande do Sul · atuação em todo o Brasil</span></div>
+        </div>
+        <div class="li-badge">
+          <div class="badge-base LI-profile-badge" data-locale="pt_BR" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="jean-galarça-41763a180" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://br.linkedin.com/in/jean-galar%C3%A7a-41763a180?trk=profile-badge">Jean Galarça</a></div>
         </div>
       </div>
 
@@ -767,6 +776,7 @@
           <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13 1 .37 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.33 1.8.57 2.8.7a2 2 0 0 1 1.7 2z"/></svg> (51) 9 9127-9381</li>
           <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg> contato@jm-engenharia.com</li>
           <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg> @jm_consultoria</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57z"/></svg> <a href="https://br.linkedin.com/in/jean-galar%C3%A7a-41763a180" target="_blank" rel="noopener">LinkedIn · Jean Galarça</a></li>
           <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.4 8 12 8 12s8-6.6 8-12a8 8 0 0 0-8-8z"/></svg> Sede no RS · atuação em todo o Brasil</li>
         </ul>
       </div>
@@ -914,5 +924,7 @@
   /* Ano no rodapé */
   document.getElementById("ano").textContent = new Date().getFullYear();
 </script>
+<!-- Selo oficial do LinkedIn -->
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 </body>
 </html>
