@@ -702,7 +702,7 @@
           <div><b>Área de atuação</b><span>Sede no Rio Grande do Sul · atuação em todo o Brasil</span></div>
         </div>
         <div class="li-badge">
-          <div class="badge-base LI-profile-badge" data-locale="pt_BR" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="jean-galarça-41763a180" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://br.linkedin.com/in/jean-galar%C3%A7a-41763a180?trk=profile-badge">Jean Galarça</a></div>
+          <div class="badge-base LI-profile-badge" data-locale="pt_BR" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="jean-galar%C3%A7a-41763a180" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://br.linkedin.com/in/jean-galar%C3%A7a-41763a180?trk=profile-badge">Jean Galarça</a></div>
         </div>
       </div>
 
@@ -923,6 +923,12 @@
 
   /* Ano no rodapé */
   document.getElementById("ano").textContent = new Date().getFullYear();
+
+  /* Se o selo do LinkedIn não renderizar (bloqueio de cookies/rede), oculta a caixa */
+  setTimeout(() => {
+    const b = document.querySelector(".li-badge");
+    if (b && !b.querySelector("iframe")) b.style.display = "none";
+  }, 6000);
 </script>
 <!-- Selo oficial do LinkedIn -->
 <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
