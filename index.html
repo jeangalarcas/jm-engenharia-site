@@ -328,6 +328,7 @@
       <a href="#atuacao">Quem atendemos</a>
       <a href="#metodo">Como trabalhamos</a>
       <a href="#porque">Por que a JM</a>
+      <a href="#jm-clima">Clima</a>
       <a href="#contato">Contato</a>
     </nav>
     <div class="nav-right">
@@ -794,6 +795,511 @@
   </div>
 </section>
 
+<!-- ============================================================
+     JM CLIMA — Previsão do tempo (3 dias) + Alertas oficiais INMET
+     Bloco autocontido: cole este bloco inteiro no HTML do site,
+     de preferência logo antes do </body> ou dentro de uma <main>.
+     Fontes de dados (gratuitas e oficiais):
+       • Previsão: INMET — apiprevmet3.inmet.gov.br (Governo Federal)
+       • Alertas:  INMET Alert-AS — avisos meteorológicos oficiais
+       • Municípios: IBGE — servicodados.ibge.gov.br
+       • Fallback de previsão: Open-Meteo (modelos meteorológicos
+         oficiais; usado só se o INMET estiver indisponível ou fora do Brasil)
+     LGPD: localização precisa SÓ após clique do visitante (consentimento);
+     estimativa por IP é aproximada, processada no navegador e nada é
+     armazenado nem enviado a servidores da JM.
+     ============================================================ -->
+<section id="jm-clima" class="jmclima" role="region" aria-label="Previsão do tempo e alertas meteorológicos">
+  <div class="jmclima__wrap">
+    <div class="jmclima__head">
+      <div>
+        <span class="jmclima__eyebrow"><span class="jmclima__dot" aria-hidden="true"></span> Clima &amp; Alertas · dados oficiais INMET</span>
+        <h2 class="jmclima__title">Previsão do tempo para <span class="jmclima__cidade" id="jmclima-cidade">sua região</span></h2>
+        <p class="jmclima__sub" id="jmclima-sub">Carregando a previsão da localidade mais próxima…</p>
+      </div>
+      <div class="jmclima__actions">
+        <button type="button" class="jmclima__btn jmclima__btn--primary" id="jmclima-geo">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+          Usar minha localização
+        </button>
+        <button type="button" class="jmclima__btn" id="jmclima-trocar">Trocar cidade</button>
+        <button type="button" class="jmclima__btn jmclima__btn--icon" id="jmclima-refresh" title="Atualizar" aria-label="Atualizar previsão">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="jmclima__picker" id="jmclima-picker" hidden>
+      <label>UF
+        <select id="jmclima-uf" aria-label="Escolha o estado"><option value="">—</option></select>
+      </label>
+      <label class="jmclima__picker-city">Município
+        <input id="jmclima-mun" list="jmclima-mun-list" placeholder="Digite o município…" autocomplete="off" disabled />
+        <datalist id="jmclima-mun-list"></datalist>
+      </label>
+      <button type="button" class="jmclima__btn jmclima__btn--primary" id="jmclima-buscar">Ver previsão</button>
+      <button type="button" class="jmclima__btn" id="jmclima-fechar">Fechar</button>
+    </div>
+
+    <div id="jmclima-alertas" class="jmclima__alertas" aria-live="polite"></div>
+
+    <div id="jmclima-cards" class="jmclima__cards" aria-live="polite">
+      <!-- skeletons -->
+      <div class="jmclima__card jmclima__card--skel"></div>
+      <div class="jmclima__card jmclima__card--skel"></div>
+      <div class="jmclima__card jmclima__card--skel"></div>
+    </div>
+
+    <p class="jmclima__foot" id="jmclima-foot">
+      Fontes oficiais e gratuitas: <a href="https://portal.inmet.gov.br/" target="_blank" rel="noopener">INMET</a> (previsão e avisos meteorológicos) e <a href="https://www.ibge.gov.br/" target="_blank" rel="noopener">IBGE</a> (municípios).
+      <span class="jmclima__lgpd">Privacidade (LGPD): sua localização só é usada com o seu consentimento, é processada no seu navegador e não é armazenada nem compartilhada pela JM.</span>
+    </p>
+  </div>
+</section>
+
+<style>
+/* ===== JM CLIMA — estilos (escopados em .jmclima) ===== */
+.jmclima{
+  --jm-navy: var(--navy, #173a66);
+  --jm-navy-deep: var(--navy-deep, #0d2342);
+  --jm-navy-ink: var(--navy-ink, #0a1b33);
+  --jm-green: var(--green, #1e7a3c);
+  --jm-green-light: var(--green-light, #3fae63);
+  --jm-teal: var(--teal, #2bb3a3);
+  --jm-bg: var(--bg, #f6f8f7);
+  --jm-surface: var(--surface, #ffffff);
+  --jm-ink: var(--ink, #122033);
+  --jm-ink-soft: var(--ink-soft, #48586e);
+  --jm-line: var(--line, #e3e9e6);
+  --jm-radius: var(--radius, 18px);
+  --jm-shadow: var(--shadow, 0 10px 30px rgba(13,35,66,.08));
+  font-family: var(--font-body, "Inter", system-ui, sans-serif);
+  color: var(--jm-ink);
+  background: var(--jm-bg);
+  padding: clamp(40px, 6vw, 72px) 20px;
+}
+.jmclima{ scroll-margin-top: 84px; }
+.jmclima *{ box-sizing: border-box; }
+.jmclima__wrap{ max-width: 1080px; margin: 0 auto; }
+.jmclima__head{ display:flex; flex-wrap:wrap; gap:18px; align-items:flex-end; justify-content:space-between; margin-bottom:18px; }
+.jmclima__eyebrow{ display:inline-flex; align-items:center; gap:8px; font-size:.78rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--jm-green); background:rgba(63,174,99,.10); border:1px solid rgba(63,174,99,.25); padding:6px 12px; border-radius:999px; }
+.jmclima__dot{ width:7px; height:7px; border-radius:50%; background:var(--jm-green-light); box-shadow:0 0 0 3px rgba(63,174,99,.18); }
+.jmclima__title{ font-family: var(--font-display, "Sora", sans-serif); font-size: clamp(1.35rem, 2.6vw, 1.9rem); line-height:1.2; margin:.55em 0 .2em; color:var(--jm-navy-ink); }
+.jmclima__cidade{ color: var(--jm-green); }
+.jmclima__sub{ margin:0; color:var(--jm-ink-soft); font-size:.95rem; }
+.jmclima__actions{ display:flex; gap:8px; flex-wrap:wrap; }
+.jmclima__btn{ display:inline-flex; align-items:center; gap:7px; font:600 .84rem/1 var(--font-body,"Inter",sans-serif); color:var(--jm-navy); background:var(--jm-surface); border:1px solid var(--jm-line); border-radius:999px; padding:10px 16px; cursor:pointer; transition:.18s; }
+.jmclima__btn:hover{ border-color:var(--jm-teal); color:var(--jm-teal); }
+.jmclima__btn--primary{ background:var(--jm-green); border-color:var(--jm-green); color:#fff; }
+.jmclima__btn--primary:hover{ background:var(--jm-green-light); border-color:var(--jm-green-light); color:#fff; }
+.jmclima__btn--icon{ padding:10px 12px; }
+.jmclima__btn[disabled]{ opacity:.55; cursor:wait; }
+.jmclima__picker{ display:flex; flex-wrap:wrap; gap:10px; align-items:end; background:var(--jm-surface); border:1px solid var(--jm-line); border-radius:var(--jm-radius); padding:14px 16px; margin-bottom:16px; box-shadow:var(--jm-shadow); }
+.jmclima__picker[hidden]{ display:none; }
+.jmclima__picker label{ display:flex; flex-direction:column; gap:5px; font-size:.75rem; font-weight:600; color:var(--jm-ink-soft); text-transform:uppercase; letter-spacing:.04em; }
+.jmclima__picker select,.jmclima__picker input{ font:500 .95rem var(--font-body,"Inter",sans-serif); color:var(--jm-ink); border:1px solid var(--jm-line); border-radius:10px; padding:9px 12px; background:#fff; min-width:90px; }
+.jmclima__picker-city{ flex:1; min-width:200px; }
+.jmclima__picker-city input{ width:100%; }
+.jmclima__alertas{ display:grid; gap:10px; margin:0 0 16px; }
+.jmclima__alerta{ display:grid; grid-template-columns:auto 1fr; gap:12px; align-items:start; background:var(--jm-surface); border:1px solid var(--jm-line); border-left:5px solid var(--al-line,#e6c200); border-radius:calc(var(--jm-radius) - 6px); padding:13px 16px; box-shadow:var(--jm-shadow); }
+.jmclima__alerta-ico{ display:grid; place-items:center; width:38px; height:38px; border-radius:12px; background:var(--al-bg,#fff4bf); color:var(--al-ink,#8a6d00); }
+.jmclima__alerta h3{ font:600 .98rem var(--font-display,"Sora",sans-serif); margin:0 0 2px; color:var(--jm-navy-ink); display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+.jmclima__alerta-badge{ font:700 .66rem/1 var(--font-body,"Inter",sans-serif); letter-spacing:.05em; text-transform:uppercase; color:var(--al-ink,#8a6d00); background:var(--al-bg,#fff4bf); border:1px solid var(--al-line,#e6c200); padding:4px 9px; border-radius:999px; }
+.jmclima__alerta p{ margin:2px 0 0; font-size:.86rem; color:var(--jm-ink-soft); }
+.jmclima__alerta details{ margin-top:6px; font-size:.84rem; color:var(--jm-ink-soft); }
+.jmclima__alerta summary{ cursor:pointer; font-weight:600; color:var(--jm-navy); }
+.jmclima__alerta ul{ margin:6px 0 0; padding-left:18px; }
+.jmclima__alerta li{ margin:2px 0; }
+.jmclima__al-ok{ display:flex; align-items:center; gap:10px; background:rgba(63,174,99,.08); border:1px solid rgba(63,174,99,.25); color:var(--jm-green); border-radius:calc(var(--jm-radius) - 6px); padding:12px 16px; font-size:.9rem; font-weight:500; }
+.jmclima--sev1{ --al-ink:#7a6200; --al-bg:#fff4bf; --al-line:#e0c000; }
+.jmclima--sev2{ --al-ink:#a34700; --al-bg:#ffe3cb; --al-line:#f96602; }
+.jmclima--sev3{ --al-ink:#8f1f1f; --al-bg:#ffdcdc; --al-line:#d32f2f; }
+.jmclima__cards{ display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:14px; }
+.jmclima__card{ background:var(--jm-surface); border:1px solid var(--jm-line); border-radius:var(--jm-radius); padding:20px; box-shadow:var(--jm-shadow); display:flex; flex-direction:column; gap:10px; min-height:210px; }
+.jmclima__card--hoje{ outline:2px solid rgba(43,179,163,.35); outline-offset:-2px; }
+.jmclima__card--skel{ position:relative; overflow:hidden; }
+.jmclima__card--skel::after{ content:""; position:absolute; inset:0; background:linear-gradient(100deg, transparent 30%, rgba(23,58,102,.06) 50%, transparent 70%); animation:jmshimmer 1.2s infinite; }
+@keyframes jmshimmer{ from{ transform:translateX(-100%);} to{ transform:translateX(100%);} }
+.jmclima__dia{ display:flex; justify-content:space-between; align-items:baseline; gap:8px; }
+.jmclima__dia b{ font:600 1rem var(--font-display,"Sora",sans-serif); color:var(--jm-navy-ink); }
+.jmclima__dia span{ font-size:.78rem; color:var(--jm-ink-soft); }
+.jmclima__icon{ color:var(--jm-teal); }
+.jmclima__temps{ display:flex; align-items:baseline; gap:10px; }
+.jmclima__tmax{ font:700 1.75rem var(--font-display,"Sora",sans-serif); color:var(--jm-navy); }
+.jmclima__tmin{ font:600 1.05rem var(--font-body,"Inter",sans-serif); color:var(--jm-ink-soft); }
+.jmclima__resumo{ margin:0; font-size:.88rem; color:var(--jm-ink); min-height:2.4em; }
+.jmclima__meta{ display:flex; gap:14px; flex-wrap:wrap; font-size:.78rem; color:var(--jm-ink-soft); border-top:1px dashed var(--jm-line); padding-top:10px; margin-top:auto; }
+.jmclima__meta span{ display:inline-flex; align-items:center; gap:5px; }
+.jmclima__foot{ margin:18px 0 0; font-size:.78rem; color:var(--jm-ink-soft); line-height:1.6; }
+.jmclima__foot a{ color:var(--jm-green); font-weight:600; text-decoration:none; }
+.jmclima__foot a:hover{ text-decoration:underline; }
+.jmclima__lgpd{ display:block; opacity:.85; }
+.jmclima__erro{ grid-column:1/-1; background:var(--jm-surface); border:1px dashed var(--jm-line); border-radius:var(--jm-radius); padding:22px; text-align:center; color:var(--jm-ink-soft); font-size:.92rem; }
+@media (max-width:640px){
+  .jmclima__head{ flex-direction:column; align-items:flex-start; }
+  .jmclima__cards{ grid-template-columns:1fr; }
+}
+</style>
+
+<script>
+/* ===== JM CLIMA — lógica (vanilla JS, sem dependências) ===== */
+(function () {
+  "use strict";
+
+  /* ---------- CONFIG (edite aqui) ---------- */
+  var CONFIG = {
+    sede: { nome: "Canoas", uf: "RS", geocode: "4304606", lat: -29.92, lon: -51.18 },
+    dias: 3,
+    usarIP: true // estimar cidade pela conexão quando o visitante não compartilhar localização
+  };
+
+  var API = {
+    inmetPrev: function (geo) { return "https://apiprevmet3.inmet.gov.br/previsao/" + geo; },
+    inmetAvisos: "https://apiprevmet3.inmet.gov.br/avisos/ativos",
+    ibgeMun: function (uf) { return "https://servicodados.ibge.gov.br/api/v1/localidades/estados/" + uf + "/municipios?view=nivelado"; },
+    ipGeo: "https://get.geojs.io/v1/ip/geo.json",
+    reverse: function (lat, lon) { return "https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=" + lat + "&longitude=" + lon + "&localityLanguage=pt"; },
+    openMeteo: function (lat, lon, dias) {
+      return "https://api.open-meteo.com/v1/forecast?latitude=" + lat + "&longitude=" + lon +
+        "&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,wind_speed_10m_max,relative_humidity_2m_max" +
+        "&timezone=auto&forecast_days=" + dias;
+    }
+  };
+
+  var UFS = ["AC","AL","AM","AP","BA","CE","DF","ES","GO","MA","MG","MS","MT","PA","PB","PE","PI","PR","RJ","RN","RO","RR","RS","SC","SE","SP","TO"];
+  var UF_NOMES = { AC:"Acre", AL:"Alagoas", AM:"Amazonas", AP:"Amapá", BA:"Bahia", CE:"Ceará", DF:"Distrito Federal", ES:"Espírito Santo", GO:"Goiás", MA:"Maranhão", MG:"Minas Gerais", MS:"Mato Grosso do Sul", MT:"Mato Grosso", PA:"Pará", PB:"Paraíba", PE:"Pernambuco", PI:"Piauí", PR:"Paraná", RJ:"Rio de Janeiro", RN:"Rio Grande do Norte", RO:"Rondônia", RR:"Roraima", RS:"Rio Grande do Sul", SC:"Santa Catarina", SE:"Sergipe", SP:"São Paulo", TO:"Tocantins" };
+
+  var $ = function (id) { return document.getElementById(id); };
+  var el = {
+    cidade: $("jmclima-cidade"), sub: $("jmclima-sub"), cards: $("jmclima-cards"),
+    alertas: $("jmclima-alertas"), foot: $("jmclima-foot"),
+    btnGeo: $("jmclima-geo"), btnTrocar: $("jmclima-trocar"), btnRefresh: $("jmclima-refresh"),
+    picker: $("jmclima-picker"), uf: $("jmclima-uf"), mun: $("jmclima-mun"),
+    munList: $("jmclima-mun-list"), buscar: $("jmclima-buscar"), fechar: $("jmclima-fechar")
+  };
+  var estado = { local: null, municipiosUF: [], avisosCache: null, avisosCacheTs: 0 };
+
+  /* ---------- utilidades ---------- */
+  function norm(s) { return String(s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim(); }
+  function fetchJSON(url, timeoutMs) {
+    return new Promise(function (resolve, reject) {
+      var ctl = ("AbortController" in window) ? new AbortController() : null;
+      var t = setTimeout(function () { if (ctl) ctl.abort(); reject(new Error("timeout")); }, timeoutMs || 9000);
+      fetch(url, ctl ? { signal: ctl.signal } : {}).then(function (r) {
+        clearTimeout(t);
+        if (!r.ok) { reject(new Error("HTTP " + r.status)); return; }
+        r.json().then(resolve, reject);
+      }, function (e) { clearTimeout(t); reject(e); });
+    });
+  }
+  function esc(s) { var d = document.createElement("div"); d.textContent = String(s == null ? "" : s); return d.innerHTML; }
+  function capital(s) { s = String(s || ""); return s.charAt(0).toUpperCase() + s.slice(1); }
+
+  /* ---------- ícones (SVG inline, traço) ---------- */
+  function svg(inner) {
+    return '<svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + inner + "</svg>";
+  }
+  var ICONS = {
+    sol: svg('<circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5 5l1.6 1.6M17.4 17.4 19 19M19 5l-1.6 1.6M6.6 17.4 5 19"/>'),
+    solNuvem: svg('<circle cx="8.5" cy="8" r="3.1"/><path d="M8.5 2.8v1.4M3.3 8h1.4M4.8 4.3l1 1M13.2 4.6l-1 1"/><path d="M7 19h9.8a3.4 3.4 0 0 0 .6-6.8 5 5 0 0 0-9.7-1A3.9 3.9 0 0 0 7 19z"/>'),
+    nuvem: svg('<path d="M6.5 18.5h10.8a3.7 3.7 0 0 0 .7-7.4 5.4 5.4 0 0 0-10.5-1.2 4.2 4.2 0 0 0-1 8.6z"/>'),
+    chuva: svg('<path d="M6.5 15h10.8a3.7 3.7 0 0 0 .7-7.4A5.4 5.4 0 0 0 7.5 6.4a4.2 4.2 0 0 0-1 8.6z"/><path d="M8.5 18.5v2M12 18.5v2.8M15.5 18.5v2"/>'),
+    garoa: svg('<path d="M6.5 15h10.8a3.7 3.7 0 0 0 .7-7.4A5.4 5.4 0 0 0 7.5 6.4a4.2 4.2 0 0 0-1 8.6z"/><path d="M9 18.2v.9M12 19.4v.9M15 18.2v.9"/>'),
+    tempestade: svg('<path d="M6.5 14.5h10.8a3.7 3.7 0 0 0 .7-7.4A5.4 5.4 0 0 0 7.5 5.9a4.2 4.2 0 0 0-1 8.6z"/><path d="m12.6 15.5-2 3.4h3l-2 3.6"/>'),
+    nevoeiro: svg('<path d="M5 15.5h14M4 18.5h16M6.5 12.5h10.8a3.7 3.7 0 0 0 .7-7.3A5.4 5.4 0 0 0 7.5 4.4a4.1 4.1 0 0 0-1 8.1z"/>'),
+    neve: svg('<path d="M6.5 15h10.8a3.7 3.7 0 0 0 .7-7.4A5.4 5.4 0 0 0 7.5 6.4a4.2 4.2 0 0 0-1 8.6z"/><path d="M9 18.5h.01M12 20h.01M15 18.5h.01" stroke-width="2.4"/>'),
+    alerta: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.9 18a2 2 0 0 0 1.7 3h16.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg>',
+    ok: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.1V12a10 10 0 1 1-5.9-9.1"/><path d="m9 11 3 3L22 4"/></svg>',
+    gota: '<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.7s6.5 7 6.5 11.6a6.5 6.5 0 1 1-13 0C5.5 9.7 12 2.7 12 2.7z"/></svg>',
+    vento: '<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h9.5a2.5 2.5 0 1 0-2.4-3.2M3 12h14.5a2.5 2.5 0 1 1-2.4 3.2M3 16h7.5a2 2 0 1 1-1.9 2.6"/></svg>'
+  };
+  function iconePorResumo(resumo) {
+    var r = norm(resumo);
+    if (/trovoada|tempestade|temporal/.test(r)) return ICONS.tempestade;
+    if (/pancada|chuva forte|chuvas intensas/.test(r)) return ICONS.chuva;
+    if (/garoa|chuvisco|chuva fraca/.test(r)) return ICONS.garoa;
+    if (/chuva/.test(r)) return ICONS.chuva;
+    if (/nevoeiro|nevoa|neblina/.test(r)) return ICONS.nevoeiro;
+    if (/neve|geada/.test(r)) return ICONS.neve;
+    if (/encoberto|muitas nuvens|nublado/.test(r)) return ICONS.nuvem;
+    if (/poucas nuvens|parcialmente|nuvens|variavel/.test(r)) return ICONS.solNuvem;
+    if (/claro|limpo|sol|ensolarado/.test(r)) return ICONS.sol;
+    return ICONS.solNuvem;
+  }
+  var WMO = {
+    0:["Céu limpo","sol"],1:["Predomínio de sol","solNuvem"],2:["Parcialmente nublado","solNuvem"],3:["Nublado","nuvem"],
+    45:["Nevoeiro","nevoeiro"],48:["Nevoeiro com gelo","nevoeiro"],51:["Garoa fraca","garoa"],53:["Garoa","garoa"],55:["Garoa forte","garoa"],
+    56:["Garoa congelante","garoa"],57:["Garoa congelante","garoa"],61:["Chuva fraca","chuva"],63:["Chuva","chuva"],65:["Chuva forte","chuva"],
+    66:["Chuva congelante","chuva"],67:["Chuva congelante","chuva"],71:["Neve fraca","neve"],73:["Neve","neve"],75:["Neve forte","neve"],
+    77:["Grãos de neve","neve"],80:["Pancadas de chuva","chuva"],81:["Pancadas de chuva","chuva"],82:["Pancadas fortes","chuva"],
+    85:["Pancadas de neve","neve"],86:["Pancadas de neve","neve"],95:["Trovoadas","tempestade"],96:["Trovoadas com granizo","tempestade"],99:["Trovoadas com granizo","tempestade"]
+  };
+
+  /* ---------- localização ---------- */
+  function localSede() {
+    return { nome: CONFIG.sede.nome, uf: CONFIG.sede.uf, geocode: CONFIG.sede.geocode, lat: CONFIG.sede.lat, lon: CONFIG.sede.lon, origem: "sede" };
+  }
+  function resolverPorCoords(lat, lon, origem) {
+    return fetchJSON(API.reverse(lat, lon)).then(function (rev) {
+      var pais = rev.countryCode || "";
+      var cidade = rev.locality || rev.city || "";
+      var uf = (rev.principalSubdivisionCode || "").replace("BR-", "");
+      if (pais && pais !== "BR") {
+        return { nome: cidade || "sua região", uf: pais, geocode: null, lat: lat, lon: lon, origem: origem, foraBR: true };
+      }
+      if (!uf || UFS.indexOf(uf) < 0) return { nome: cidade || CONFIG.sede.nome, uf: uf, geocode: null, lat: lat, lon: lon, origem: origem };
+      return fetchJSON(API.ibgeMun(uf)).then(function (lista) {
+        var alvo = norm(cidade), m = null, i;
+        for (i = 0; i < lista.length; i++) if (norm(lista[i]["municipio-nome"]) === alvo) { m = lista[i]; break; }
+        if (!m) for (i = 0; i < lista.length; i++) if (norm(lista[i]["municipio-nome"]).indexOf(alvo) === 0 && alvo.length >= 4) { m = lista[i]; break; }
+        return { nome: m ? m["municipio-nome"] : (cidade || CONFIG.sede.nome), uf: uf, geocode: m ? String(m["municipio-id"]) : null, lat: lat, lon: lon, origem: origem };
+      }, function () { return { nome: cidade || CONFIG.sede.nome, uf: uf, geocode: null, lat: lat, lon: lon, origem: origem }; });
+    });
+  }
+  function resolverPorIP() {
+    if (!CONFIG.usarIP) return Promise.reject(new Error("ip desativado"));
+    return fetchJSON(API.ipGeo, 6000).then(function (ip) {
+      var lat = parseFloat(ip.latitude), lon = parseFloat(ip.longitude);
+      if (!isFinite(lat) || !isFinite(lon)) throw new Error("ip sem coords");
+      return resolverPorCoords(lat, lon, "ip");
+    });
+  }
+
+  /* ---------- previsão ---------- */
+  function prevINMET(geocode) {
+    return fetchJSON(API.inmetPrev(geocode)).then(function (data) {
+      var g = data && data[geocode];
+      if (!g) throw new Error("sem dados INMET");
+      var dias = [], datas = Object.keys(g).slice(0, CONFIG.dias);
+      datas.forEach(function (dt) {
+        var v = g[dt], per = v.manha || v.tarde || v.noite ? null : v;
+        var partes = per ? [per] : [v.manha, v.tarde, v.noite].filter(Boolean);
+        var rep = per || v.tarde || v.manha || v.noite;
+        var tmax = null, tmin = null, umax = null, umin = null;
+        partes.forEach(function (p) {
+          if (p.temp_max != null) tmax = tmax == null ? p.temp_max : Math.max(tmax, p.temp_max);
+          if (p.temp_min != null) tmin = tmin == null ? p.temp_min : Math.min(tmin, p.temp_min);
+          if (p.umidade_max != null) umax = umax == null ? p.umidade_max : Math.max(umax, p.umidade_max);
+          if (p.umidade_min != null) umin = umin == null ? p.umidade_min : Math.min(umin, p.umidade_min);
+        });
+        var pd = dt.split("/");
+        dias.push({
+          data: new Date(+pd[2], +pd[1] - 1, +pd[0]),
+          diaSemana: rep.dia_semana || "",
+          resumo: rep.resumo || rep.tempo || "",
+          icone: iconePorResumo(rep.resumo || rep.tempo),
+          tmax: tmax, tmin: tmin, umax: umax, umin: umin,
+          vento: rep.int_vento ? capital(String(rep.int_vento)) + (rep.dir_vento ? " · " + rep.dir_vento : "") : null
+        });
+      });
+      return { dias: dias, fonte: "INMET · Instituto Nacional de Meteorologia", fonteUrl: "https://portal.inmet.gov.br/" };
+    });
+  }
+  function prevOpenMeteo(lat, lon) {
+    return fetchJSON(API.openMeteo(lat, lon, CONFIG.dias)).then(function (om) {
+      var d = om.daily, dias = [];
+      for (var i = 0; i < d.time.length; i++) {
+        var wc = WMO[d.weather_code[i]] || ["Tempo variável", "solNuvem"];
+        var pdt = d.time[i].split("-");
+        var data = new Date(+pdt[0], +pdt[1] - 1, +pdt[2]);
+        dias.push({
+          data: data,
+          diaSemana: data.toLocaleDateString("pt-BR", { weekday: "long" }),
+          resumo: wc[0] + (d.precipitation_probability_max && d.precipitation_probability_max[i] != null ? " · " + d.precipitation_probability_max[i] + "% de chance de chuva" : ""),
+          icone: ICONS[wc[1]],
+          tmax: Math.round(d.temperature_2m_max[i]), tmin: Math.round(d.temperature_2m_min[i]),
+          umax: d.relative_humidity_2m_max ? d.relative_humidity_2m_max[i] : null, umin: null,
+          vento: d.wind_speed_10m_max ? Math.round(d.wind_speed_10m_max[i]) + " km/h" : null
+        });
+      }
+      return { dias: dias, fonte: "Open-Meteo (ponto disponível mais próximo — modelos meteorológicos oficiais)", fonteUrl: "https://open-meteo.com/" };
+    });
+  }
+
+  /* ---------- alertas ---------- */
+  function sevRank(a) { var s = norm(a.severidade); if (s.indexOf("grande") >= 0) return 3; if (s === "perigo") return 2; return 1; }
+  function sevClasse(a) { return "jmclima--sev" + sevRank(a); }
+  function getAvisos() {
+    var agora = Date.now();
+    if (estado.avisosCache && agora - estado.avisosCacheTs < 10 * 60 * 1000) return Promise.resolve(estado.avisosCache);
+    return fetchJSON(API.inmetAvisos, 15000).then(function (av) {
+      estado.avisosCache = av; estado.avisosCacheTs = agora; return av;
+    });
+  }
+  function alertasPara(local) {
+    return getAvisos().then(function (av) {
+      var todos = (av.hoje || []).concat(av.futuro || []);
+      var meus = [], nivel = "municipio";
+      if (local.geocode) {
+        meus = todos.filter(function (a) { return String(a.geocodes || "").split(",").indexOf(String(local.geocode)) >= 0; });
+      }
+      if (!meus.length && local.uf && UF_NOMES[local.uf]) {
+        var ufNome = norm(UF_NOMES[local.uf]);
+        var estaduais = todos.filter(function (a) { return norm(a.estados).indexOf(ufNome) >= 0; });
+        if (!local.geocode && estaduais.length) { meus = estaduais; nivel = "uf"; }
+      }
+      var vistos = {}, unicos = [];
+      meus.forEach(function (a) {
+        var k = norm(a.descricao) + "|" + a.aviso_cor + "|" + (a.fim || a.data_fim);
+        if (!vistos[k]) { vistos[k] = 1; unicos.push(a); }
+      });
+      unicos.sort(function (a, b) { return sevRank(b) - sevRank(a); });
+      return { alertas: unicos, nivel: nivel };
+    });
+  }
+
+  /* ---------- renderização ---------- */
+  function fmtData(d) { return d.toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" }); }
+  function fmtDiaSemana(s, d, idx) {
+    if (idx === 0) return "Hoje";
+    if (idx === 1) return "Amanhã";
+    var nome = s || d.toLocaleDateString("pt-BR", { weekday: "long" });
+    return capital(nome.split("-")[0]);
+  }
+  function fmtPeriodo(a) {
+    function f(s) {
+      if (!s) return "";
+      var m = String(s).match(/(\d{4})-(\d{2})-(\d{2})[T ](\d{2}):(\d{2})/);
+      return m ? m[3] + "/" + m[2] + " " + m[4] + ":" + m[5] : String(s);
+    }
+    var ini = f(a.inicio || a.data_inicio), fim = f(a.fim || a.data_fim);
+    return (ini ? "de " + ini : "") + (fim ? " até " + fim : "");
+  }
+  function renderCards(prev) {
+    var html = "";
+    prev.dias.forEach(function (dia, i) {
+      html += '<article class="jmclima__card' + (i === 0 ? " jmclima__card--hoje" : "") + '">' +
+        '<div class="jmclima__dia"><b>' + esc(fmtDiaSemana(dia.diaSemana, dia.data, i)) + "</b><span>" + fmtData(dia.data) + "</span></div>" +
+        '<div class="jmclima__icon">' + dia.icone + "</div>" +
+        '<div class="jmclima__temps"><span class="jmclima__tmax">' + (dia.tmax != null ? Math.round(dia.tmax) + "°" : "–") + '</span><span class="jmclima__tmin">' + (dia.tmin != null ? Math.round(dia.tmin) + "°" : "–") + "</span></div>" +
+        '<p class="jmclima__resumo">' + esc(dia.resumo) + "</p>" +
+        '<div class="jmclima__meta">' +
+        (dia.umax != null ? "<span>" + ICONS.gota + " " + (dia.umin != null ? dia.umin + "–" : "") + dia.umax + "%</span>" : "") +
+        (dia.vento ? "<span>" + ICONS.vento + " " + esc(dia.vento) + "</span>" : "") +
+        "</div></article>";
+    });
+    el.cards.innerHTML = html;
+  }
+  function renderAlertas(res, local) {
+    if (!res.alertas.length) {
+      el.alertas.innerHTML = '<div class="jmclima__al-ok">' + ICONS.ok + " Nenhum alerta meteorológico ativo do INMET para " +
+        (local.geocode ? esc(local.nome) + "/" + esc(local.uf) : "sua região") + " neste momento.</div>";
+      return;
+    }
+    var html = "";
+    res.alertas.forEach(function (a) {
+      html += '<div class="jmclima__alerta ' + sevClasse(a) + '">' +
+        '<div class="jmclima__alerta-ico">' + ICONS.alerta + "</div><div>" +
+        "<h3>" + esc(a.descricao) + ' <span class="jmclima__alerta-badge">' + esc(a.severidade) + "</span></h3>" +
+        "<p>" + (res.nivel === "uf" ? "Aviso para áreas do estado (" + esc(UF_NOMES[local.uf] || local.uf) + ") · " : "") + "Válido " + esc(fmtPeriodo(a)) + "</p>" +
+        (a.riscos ? "<p>" + esc(String(a.riscos)) + "</p>" : "") +
+        (a.instrucoes ? "<details><summary>Instruções de segurança (INMET)</summary><ul>" +
+          String(a.instrucoes).split(/\s*,(?=\s*[A-ZÁÉÍÓÚÀÂÊÔÃÕÇ])/).map(function (i) { i = i.trim().replace(/^[,.]+|[,]+$/g, ""); return i ? "<li>" + esc(i) + "</li>" : ""; }).join("") +
+          "</ul></details>" : "") +
+        "</div></div>";
+    });
+    el.alertas.innerHTML = html;
+  }
+  function renderErro(msg) {
+    el.cards.innerHTML = '<div class="jmclima__erro">' + esc(msg) + "</div>";
+  }
+  function setFonte(prev) {
+    var agora = new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
+    el.foot.innerHTML = 'Previsão: <a href="' + prev.fonteUrl + '" target="_blank" rel="noopener">' + esc(prev.fonte) + "</a> · Alertas: " +
+      '<a href="https://alertas2.inmet.gov.br/" target="_blank" rel="noopener">INMET Alert-AS</a> · Municípios: ' +
+      '<a href="https://www.ibge.gov.br/" target="_blank" rel="noopener">IBGE</a> · Atualizado às ' + agora + "." +
+      '<span class="jmclima__lgpd">Privacidade (LGPD): sua localização só é usada com o seu consentimento, é processada no seu navegador e não é armazenada nem compartilhada pela JM.</span>';
+  }
+
+  /* ---------- fluxo principal ---------- */
+  function skeleton() {
+    el.cards.innerHTML = '<div class="jmclima__card jmclima__card--skel"></div><div class="jmclima__card jmclima__card--skel"></div><div class="jmclima__card jmclima__card--skel"></div>';
+    el.alertas.innerHTML = "";
+  }
+  function origemTexto(local) {
+    if (local.foraBR) return "Localidade detectada fora do Brasil — mostrando a previsão do ponto mais próximo.";
+    if (local.origem === "geo") return "Usando sua localização (com o seu consentimento).";
+    if (local.origem === "ip") return "Localidade estimada pela sua conexão — use o botão para maior precisão.";
+    if (local.origem === "manual") return "Cidade escolhida manualmente.";
+    return "Mostrando a sede da JM Engenharia. Use os botões para ver a sua cidade.";
+  }
+  function carregar(local) {
+    estado.local = local; skeleton();
+    el.cidade.textContent = local.nome + (local.uf && !local.foraBR ? "/" + local.uf : "");
+    el.sub.textContent = "Carregando previsão e alertas…";
+    var temCoords = isFinite(local.lat) && isFinite(local.lon);
+    var pPrev = local.geocode
+      ? prevINMET(local.geocode).catch(function (e) { if (temCoords) return prevOpenMeteo(local.lat, local.lon); throw e; })
+      : (temCoords ? prevOpenMeteo(local.lat, local.lon) : Promise.reject(new Error("sem coordenadas")));
+    pPrev.then(function (prev) {
+      renderCards(prev); setFonte(prev);
+      el.sub.textContent = origemTexto(local);
+    }, function () {
+      renderErro("Não foi possível carregar a previsão agora. Verifique sua conexão e tente novamente no botão ↻.");
+      el.sub.textContent = origemTexto(local);
+    });
+    if (local.foraBR) {
+      el.alertas.innerHTML = '<div class="jmclima__al-ok">' + ICONS.ok + " Os alertas oficiais do INMET cobrem o território brasileiro.</div>";
+    } else {
+      alertasPara(local).then(function (res) { renderAlertas(res, local); }, function () {
+        el.alertas.innerHTML = '<div class="jmclima__al-ok">' + ICONS.alerta + " Não foi possível consultar os avisos do INMET agora.</div>";
+      });
+    }
+  }
+  function iniciar() {
+    resolverPorIP().then(carregar, function () { carregar(localSede()); });
+  }
+
+  /* ---------- eventos ---------- */
+  el.btnGeo.addEventListener("click", function () {
+    if (!navigator.geolocation) { carregar(localSede()); return; }
+    el.btnGeo.disabled = true; el.sub.textContent = "Aguardando sua permissão de localização…";
+    navigator.geolocation.getCurrentPosition(function (pos) {
+      resolverPorCoords(pos.coords.latitude, pos.coords.longitude, "geo")
+        .then(carregar, function () { carregar(localSede()); })
+        .then(function () { el.btnGeo.disabled = false; });
+    }, function () {
+      el.btnGeo.disabled = false;
+      el.sub.textContent = "Permissão negada — mostrando a localidade estimada.";
+      iniciar();
+    }, { timeout: 10000, maximumAge: 300000 });
+  });
+  el.btnRefresh.addEventListener("click", function () {
+    estado.avisosCache = null;
+    carregar(estado.local || localSede());
+  });
+  el.btnTrocar.addEventListener("click", function () {
+    el.picker.hidden = !el.picker.hidden;
+    if (!el.uf.options.length || el.uf.options.length === 1) {
+      UFS.forEach(function (uf) { var o = document.createElement("option"); o.value = uf; o.textContent = uf + " — " + UF_NOMES[uf]; el.uf.appendChild(o); });
+    }
+  });
+  el.fechar.addEventListener("click", function () { el.picker.hidden = true; });
+  el.uf.addEventListener("change", function () {
+    el.mun.value = ""; el.mun.disabled = true; el.munList.innerHTML = "";
+    if (!el.uf.value) return;
+    fetchJSON(API.ibgeMun(el.uf.value)).then(function (lista) {
+      estado.municipiosUF = lista;
+      el.munList.innerHTML = lista.map(function (m) { return '<option value="' + esc(m["municipio-nome"]) + '">'; }).join("");
+      el.mun.disabled = false; el.mun.focus();
+    }, function () { el.mun.disabled = false; });
+  });
+  el.buscar.addEventListener("click", function () {
+    var alvo = norm(el.mun.value), m = null;
+    for (var i = 0; i < estado.municipiosUF.length; i++) if (norm(estado.municipiosUF[i]["municipio-nome"]) === alvo) { m = estado.municipiosUF[i]; break; }
+    if (!m) { el.mun.setCustomValidity(""); el.sub.textContent = "Escolha um município da lista para ver a previsão."; return; }
+    el.picker.hidden = true;
+    carregar({ nome: m["municipio-nome"], uf: el.uf.value, geocode: String(m["municipio-id"]), lat: NaN, lon: NaN, origem: "manual" });
+  });
+
+  /* ---------- go ---------- */
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", iniciar);
+  else iniciar();
+})();
+</script>
+<!-- ===== JM CLIMA — FIM ===== -->
+
+
 <!-- ================= FOOTER ================= -->
 <footer>
   <div class="container">
@@ -812,6 +1318,7 @@
           <li><a href="#atuacao">Setor Privado</a></li>
           <li><a href="#metodo">Como trabalhamos</a></li>
           <li><a href="#porque">Por que a JM</a></li>
+          <li><a href="#jm-clima">Clima e Alertas</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
       </div>
