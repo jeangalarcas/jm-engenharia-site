@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "jm-engenharia.com"
+        }
+      ],
+      "destination": "https://www.jm-engenharia.com/:path*",
+      "permanent": true
+    }
+  ]
+}
