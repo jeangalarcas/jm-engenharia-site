@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-09-14",
+  "atualizado": "2026-10-05",
   "itens": [
     {
       "tag": "Lei",
@@ -10,17 +10,38 @@
     },
     {
       "tag": "Análise",
-      "titulo": "A nova LGLA e os limites da jurisprudência anterior do STF: análise sobre como os precedentes da Corte podem incidir no julgamento da Lei 15.190/2025",
+      "titulo": "STJ julga quem deve licenciar empreendimentos de grande impacto: no caso do Comperj (RJ), relator votou pela competência do Ibama quando os efeitos ambientais ultrapassam os limites estaduais, aplicando a LC 140/2011",
       "fonte": "Consultor Jurídico",
-      "data": "ago/2026",
-      "url": "https://conjur.com.br/2026-ago-18/a-nova-lgla-e-os-limites-da-jurisprudencia-anterior-do-stf/"
+      "data": "set/2026",
+      "url": "https://conjur.com.br/2026-set-12/stj-avalia-limites-para-licenca-ambiental-por-ibama-e-orgao-estadual/"
     },
     {
       "tag": "Clima",
-      "titulo": "Defesa Civil Nacional reconhece situação de emergência em seis cidades do Sul (PR, RS e SC) atingidas por granizo e chuvas intensas; com o reconhecimento federal, os municípios podem solicitar recursos da União para resposta e reconstrução",
+      "titulo": "Temporais atingem 145 municípios do Rio Grande do Sul e deixam mais de 700 desabrigados e 560 mil pessoas afetadas; Defesa Civil emitiu alerta vermelho para inundação do Rio Caí",
       "fonte": "Agência Brasil",
-      "data": "ago/2026",
-      "url": "https://agenciabrasil.ebc.com.br/geral/noticia/2026-08/defesa-civil-reconhece-situacao-de-emergencia-em-seis-cidades-do-sul"
+      "data": "set/2026",
+      "url": "https://agenciabrasil.ebc.com.br/meio-ambiente/noticia/2026-09/temporais-no-rs-deixam-mais-de-700-pessoas-desabrigadas"
+    },
+    {
+      "tag": "Municípios",
+      "titulo": "Porto Alegre lança o Programa Reurb+, com cerca de R$ 3,7 milhões para regularizar até 5.859 lotes: credenciamento inédito de múltiplas empresas para diagnósticos, levantamentos cartográficos e projetos de regularização fundiária",
+      "fonte": "Prefeitura de Porto Alegre",
+      "data": "out/2026",
+      "url": "https://prefeitura.poa.br/pgm/noticias/prefeitura-lanca-programa-reurb-nesta-quinta-feira"
+    },
+    {
+      "tag": "Saneamento",
+      "titulo": "ANA reúne entidades reguladoras infranacionais no 3º Encontro Nacional para discutir a implementação do marco legal do saneamento, investimentos e a universalização dos serviços",
+      "fonte": "Agência Nacional de Águas e Saneamento Básico",
+      "data": "set/2026",
+      "url": "https://www.gov.br/ana/pt-br/assuntos/noticias-e-eventos/noticias-periodo-eleitoral-2026/ana-abre-3o-encontro-nacional-das-entidades-reguladoras-infranacionais-de-saneamento-basico"
+    },
+    {
+      "tag": "Tributário",
+      "titulo": "CNM publica nota técnica orientando os Municípios sobre a integração ao Sinter e o uso do Cadastro Imobiliário Brasileiro (CIB), exigências ligadas à implementação da Reforma Tributária",
+      "fonte": "Confederação Nacional de Municípios",
+      "data": "set/2026",
+      "url": "https://cnm.org.br/comunicacao/noticias/nota-tecnica-orienta-municipios-sobre-integracao-ao-sinter-e-uso-do-cib"
     },
     {
       "tag": "Municípios",
@@ -28,27 +49,6 @@
       "fonte": "IBGE — Agência de Notícias",
       "data": "set/2026",
       "url": "https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/47986-dia-da-independencia-ibge-libera-acesso-aos-mapas-mundi-do-brasil"
-    },
-    {
-      "tag": "Municípios",
-      "titulo": "Registro de Imóveis do Brasil lança a cartilha \"Reurb na Prática\", com orientações técnicas e modelos de documentos para a regularização fundiária urbana, em download gratuito",
-      "fonte": "Registro de Imóveis do Brasil",
-      "data": "ago/2026",
-      "url": "https://www.registrodeimoveis.org.br/rib-lanca-cartilha-sobre-regularizacao-fundiaria-urbana"
-    },
-    {
-      "tag": "Prazo",
-      "titulo": "ANA: Consulta Pública 03/2026 sobre a Norma de Referência de revisão tarifária dos serviços de água e esgoto recebe contribuições até as 18h de 17 de setembro",
-      "fonte": "Agência Nacional de Águas e Saneamento Básico",
-      "data": "ago/2026",
-      "url": "https://www.gov.br/ana/pt-br/assuntos/noticias-e-eventos/noticias-periodo-eleitoral-2026/consulta-publica-sobre-revisao-tarifaria-para-os-servicos-de-abastecimento-de-agua-e-esgotamento-sanitario-segue-ate-17-de-setembro"
-    },
-    {
-      "tag": "Tributário",
-      "titulo": "CNM debate o papel do Sinter e do Cadastro Imobiliário Brasileiro (CIB) na implementação da Reforma Tributária nos municípios",
-      "fonte": "Confederação Nacional de Municípios",
-      "data": "jul/2026",
-      "url": "https://cnm.org.br/comunicacao/noticias/bate-papo-cnm-discute-cadastro-imobiliario-brasileiro-na-reforma-tributaria"
     }
   ]
 }
