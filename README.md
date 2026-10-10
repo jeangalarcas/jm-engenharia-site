@@ -3,7 +3,7 @@
 Site one-page estático (HTML + CSS + JavaScript puros, sem build), hospedagem gratuita na Vercel.
 
 - **Domínio:** https://jm-engenharia.com
-- **Contato:** contato@jm-engenharia.com · (51) 9 9127-9381 · [@jm_consultoria](https://www.instagram.com/jm_consultoria)
+- **Contato:** contato@jm-engenharia.com · (51) 9 9303-0372 · [@jm_consultoria](https://www.instagram.com/jm_consultoria)
 
 ## Seções
 
