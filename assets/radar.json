@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-10-05",
+  "atualizado": "2026-10-12",
   "itens": [
     {
       "tag": "Lei",
@@ -10,17 +10,17 @@
     },
     {
       "tag": "Análise",
-      "titulo": "STJ julga quem deve licenciar empreendimentos de grande impacto: no caso do Comperj (RJ), relator votou pela competência do Ibama quando os efeitos ambientais ultrapassam os limites estaduais, aplicando a LC 140/2011",
+      "titulo": "Artigo analisa a competência dos Municípios para licenciar atividades de impacto ambiental local (LC 140/2011) e critica a margem que a Lei Geral do Licenciamento (15.190/2025) dá a Estados e Municípios para definir porte, potencial poluidor e tipologias",
       "fonte": "Consultor Jurídico",
-      "data": "set/2026",
-      "url": "https://conjur.com.br/2026-set-12/stj-avalia-limites-para-licenca-ambiental-por-ibama-e-orgao-estadual/"
+      "data": "out/2026",
+      "url": "https://conjur.com.br/2026-out-02/competencia-municipal-em-materia-de-licenciamento-ambiental-na-lc-no-140-2011/"
     },
     {
-      "tag": "Clima",
-      "titulo": "Temporais atingem 145 municípios do Rio Grande do Sul e deixam mais de 700 desabrigados e 560 mil pessoas afetadas; Defesa Civil emitiu alerta vermelho para inundação do Rio Caí",
-      "fonte": "Agência Brasil",
+      "tag": "Municípios",
+      "titulo": "Justiça do Maranhão determina que o Município de São Luís conclua a Reurb-S da comunidade Novo Angelim e entregue os títulos de propriedade às famílias em até 18 meses, com cronograma e plano de trabalho em 60 dias, com base na Lei 13.465/2017",
+      "fonte": "Consultor Jurídico",
       "data": "set/2026",
-      "url": "https://agenciabrasil.ebc.com.br/meio-ambiente/noticia/2026-09/temporais-no-rs-deixam-mais-de-700-pessoas-desabrigadas"
+      "url": "https://conjur.com.br/2026-set-26/municipio-deve-concluir-projeto-de-regularizacao-fundiaria-no-maranhao/"
     },
     {
       "tag": "Municípios",
@@ -31,24 +31,24 @@
     },
     {
       "tag": "Saneamento",
-      "titulo": "ANA reúne entidades reguladoras infranacionais no 3º Encontro Nacional para discutir a implementação do marco legal do saneamento, investimentos e a universalização dos serviços",
+      "titulo": "ANA amplia de dois para quatro anos o prazo para as entidades reguladoras infranacionais de saneamento comprovarem mandatos fixos e não coincidentes de seus dirigentes, exigência da Norma de Referência nº 4/2024 que passa a valer na comprovação referente a 2028",
       "fonte": "Agência Nacional de Águas e Saneamento Básico",
       "data": "set/2026",
-      "url": "https://www.gov.br/ana/pt-br/assuntos/noticias-e-eventos/noticias-periodo-eleitoral-2026/ana-abre-3o-encontro-nacional-das-entidades-reguladoras-infranacionais-de-saneamento-basico"
+      "url": "https://www.gov.br/ana/pt-br/assuntos/noticias-e-eventos/noticias-periodo-eleitoral-2026/diretoria-colegiada-da-ana-aprova-mudanca-na-nr-no-4-2024"
     },
     {
-      "tag": "Tributário",
-      "titulo": "CNM publica nota técnica orientando os Municípios sobre a integração ao Sinter e o uso do Cadastro Imobiliário Brasileiro (CIB), exigências ligadas à implementação da Reforma Tributária",
+      "tag": "Prazo",
+      "titulo": "Resolução CGSN 194/2026 prorroga os prazos do Simples Nacional para 2027: a opção pelo regime pode ser feita até 15 de outubro de 2026 e, para as empresas optantes, a escolha pelo regime regular do IBS e da CBS vai até 30 de outubro",
       "fonte": "Confederação Nacional de Municípios",
       "data": "set/2026",
-      "url": "https://cnm.org.br/comunicacao/noticias/nota-tecnica-orienta-municipios-sobre-integracao-ao-sinter-e-uso-do-cib"
+      "url": "https://cnm.org.br/comunicacao/noticias/prorrogado-o-prazo-de-opcao-pelo-simples-nacional-e-pelo-regime-regular-do-ibs-e-da-cbs"
     },
     {
-      "tag": "Municípios",
-      "titulo": "IBGE libera acesso gratuito à série inédita de mapas-múndi produzidos entre 2024 e 2026, incluindo projeções com o Brasil no centro — novo insumo cartográfico e educacional para planejamento e gestão territorial",
-      "fonte": "IBGE — Agência de Notícias",
-      "data": "set/2026",
-      "url": "https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/47986-dia-da-independencia-ibge-libera-acesso-aos-mapas-mundi-do-brasil"
+      "tag": "Clima",
+      "titulo": "Defesa Civil Nacional pré-mobilizou equipes em Porto Alegre, Curitiba, Rio de Janeiro e Belo Horizonte para os temporais de 3 e 4 de outubro no Sul e no Sudeste, após aviso vermelho (grande perigo) do Inmet para chuva acima de 100 mm por dia, ventos de mais de 100 km/h e granizo",
+      "fonte": "Agência Brasil",
+      "data": "out/2026",
+      "url": "https://agenciabrasil.ebc.com.br/meio-ambiente/noticia/2026-10/defesa-civil-nacional-mobiliza-equipes-para-temporais-no-sul-e-sudeste"
     }
   ]
 }
