@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-10-12",
+  "atualizado": "2026-10-19",
   "itens": [
     {
       "tag": "Lei",
@@ -16,11 +16,25 @@
       "url": "https://conjur.com.br/2026-out-02/competencia-municipal-em-materia-de-licenciamento-ambiental-na-lc-no-140-2011/"
     },
     {
-      "tag": "Municípios",
-      "titulo": "Justiça do Maranhão determina que o Município de São Luís conclua a Reurb-S da comunidade Novo Angelim e entregue os títulos de propriedade às famílias em até 18 meses, com cronograma e plano de trabalho em 60 dias, com base na Lei 13.465/2017",
+      "tag": "Tributário",
+      "titulo": "Artigo analisa a exclusão do IBS e da CBS das bases de cálculo do ISS e do ICMS durante a transição da reforma tributária, tema que afeta diretamente a arrecadação municipal a partir de 2026",
       "fonte": "Consultor Jurídico",
+      "data": "out/2026",
+      "url": "https://conjur.com.br/2026-out-10/a-exclusao-do-ibs-e-da-cbs-das-bases-de-calculo-do-iss-e-do-icms/"
+    },
+    {
+      "tag": "Prazo",
+      "titulo": "Termina em 30 de outubro o prazo para as empresas optantes do Simples Nacional escolherem o regime regular do IBS e da CBS, conforme a Resolução CGSN 194/2026 (a opção pelo próprio Simples encerrou-se em 15 de outubro)",
+      "fonte": "Confederação Nacional de Municípios",
       "data": "set/2026",
-      "url": "https://conjur.com.br/2026-set-26/municipio-deve-concluir-projeto-de-regularizacao-fundiaria-no-maranhao/"
+      "url": "https://cnm.org.br/comunicacao/noticias/prorrogado-o-prazo-de-opcao-pelo-simples-nacional-e-pelo-regime-regular-do-ibs-e-da-cbs"
+    },
+    {
+      "tag": "Saneamento",
+      "titulo": "ANA aprova a Norma de Referência nº 16/2026 (Resolução 302/2026), que institui a contabilidade regulatória no saneamento: reguladores infranacionais têm até 3 anos para incorporar as regras e os prestadores devem implantar os manuais até o exercício de 2032",
+      "fonte": "Mattos Filho",
+      "data": "set/2026",
+      "url": "https://www.mattosfilho.com.br/unico/agencia-aguas-contabilidade-saneamento/"
     },
     {
       "tag": "Municípios",
@@ -30,25 +44,11 @@
       "url": "https://prefeitura.poa.br/pgm/noticias/prefeitura-lanca-programa-reurb-nesta-quinta-feira"
     },
     {
-      "tag": "Saneamento",
-      "titulo": "ANA amplia de dois para quatro anos o prazo para as entidades reguladoras infranacionais de saneamento comprovarem mandatos fixos e não coincidentes de seus dirigentes, exigência da Norma de Referência nº 4/2024 que passa a valer na comprovação referente a 2028",
-      "fonte": "Agência Nacional de Águas e Saneamento Básico",
-      "data": "set/2026",
-      "url": "https://www.gov.br/ana/pt-br/assuntos/noticias-e-eventos/noticias-periodo-eleitoral-2026/diretoria-colegiada-da-ana-aprova-mudanca-na-nr-no-4-2024"
-    },
-    {
-      "tag": "Prazo",
-      "titulo": "Resolução CGSN 194/2026 prorroga os prazos do Simples Nacional para 2027: a opção pelo regime pode ser feita até 15 de outubro de 2026 e, para as empresas optantes, a escolha pelo regime regular do IBS e da CBS vai até 30 de outubro",
-      "fonte": "Confederação Nacional de Municípios",
-      "data": "set/2026",
-      "url": "https://cnm.org.br/comunicacao/noticias/prorrogado-o-prazo-de-opcao-pelo-simples-nacional-e-pelo-regime-regular-do-ibs-e-da-cbs"
-    },
-    {
       "tag": "Clima",
-      "titulo": "Defesa Civil Nacional pré-mobilizou equipes em Porto Alegre, Curitiba, Rio de Janeiro e Belo Horizonte para os temporais de 3 e 4 de outubro no Sul e no Sudeste, após aviso vermelho (grande perigo) do Inmet para chuva acima de 100 mm por dia, ventos de mais de 100 km/h e granizo",
-      "fonte": "Agência Brasil",
+      "titulo": "Painel El Niño 2026-2027 (INPE, Inmet, Cemaden e parceiros) publica 4º boletim: 95% de chance de El Niño 'muito forte' no trimestre outubro-dezembro, com chuva acima da média e risco de cheias no Sul e seca mais severa e risco de fogo no centro-norte do país",
+      "fonte": "INPE/MCTI",
       "data": "out/2026",
-      "url": "https://agenciabrasil.ebc.com.br/meio-ambiente/noticia/2026-10/defesa-civil-nacional-mobiliza-equipes-para-temporais-no-sul-e-sudeste"
+      "url": "https://www.gov.br/inpe/pt-br/assuntos/ultimas-noticias/painel-el-nino-2026-2027-quarto-boletim-sobre-o-monitoramento-do-fenomeno-no-brasil-e-publicado"
     }
   ]
 }
