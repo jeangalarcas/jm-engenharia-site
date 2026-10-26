@@ -1,30 +1,30 @@
 {
-  "atualizado": "2026-10-19",
+  "atualizado": "2026-10-26",
   "itens": [
     {
       "tag": "Lei",
-      "titulo": "STF adia novamente o julgamento das ações contra a Lei Geral do Licenciamento Ambiental (15.190/2025); sem liminar ou decisão de mérito, a lei permanece em vigor e segue regendo os processos de licenciamento no país",
-      "fonte": "Rádio Senado",
-      "data": "ago/2026",
-      "url": "https://www12.senado.leg.br/radio/1/noticia/2026/08/26/lei-sobre-licenciamento-ambiental-tem-julgamento-adiado-pelo-stf"
+      "titulo": "Rio de Janeiro publica o Decreto 50.473/2026, que reestrutura o licenciamento ambiental estadual (SELCA) para alinhá-lo à Lei Geral do Licenciamento (15.190/2025): novas modalidades de licença, renovação automática para baixo e médio impacto, prazos máximos de análise e tramitação totalmente eletrônica",
+      "fonte": "Migalhas",
+      "data": "out/2026",
+      "url": "https://www.migalhas.com.br/depeso/465893/rio-de-janeiro-publica-novo-decreto-de-licenciamento-ambiental"
     },
     {
       "tag": "Análise",
-      "titulo": "Artigo analisa a competência dos Municípios para licenciar atividades de impacto ambiental local (LC 140/2011) e critica a margem que a Lei Geral do Licenciamento (15.190/2025) dá a Estados e Municípios para definir porte, potencial poluidor e tipologias",
+      "titulo": "Artigo analisa o novo papel das unidades de conservação no licenciamento: a Lei 15.190/2025 encerra a autorização prévia dos órgãos gestores (como o ICMBio), que passam a atuar como autoridades envolvidas, com manifestação não vinculante",
       "fonte": "Consultor Jurídico",
       "data": "out/2026",
-      "url": "https://conjur.com.br/2026-out-02/competencia-municipal-em-materia-de-licenciamento-ambiental-na-lc-no-140-2011/"
+      "url": "https://conjur.com.br/2026-out-12/a-lei-geral-do-licenciamento-ambiental-e-o-fim-da-autorizacao-dos-orgaos-gestores-de-unidades-de-conservacao/"
     },
     {
       "tag": "Tributário",
-      "titulo": "Artigo analisa a exclusão do IBS e da CBS das bases de cálculo do ISS e do ICMS durante a transição da reforma tributária, tema que afeta diretamente a arrecadação municipal a partir de 2026",
-      "fonte": "Consultor Jurídico",
+      "titulo": "CNM publica a Nota Técnica CTAT 08/2026 orientando os Municípios a adaptar legislação e sistemas de ISS dos cartórios ao IBS: notas fiscais eletrônicas por ato notarial até 31/12/2026 e integração dos cadastros municipais ao Cadastro Imobiliário Brasileiro (CIB) para fiscalizar ISS e ITBI",
+      "fonte": "Confederação Nacional de Municípios",
       "data": "out/2026",
-      "url": "https://conjur.com.br/2026-out-10/a-exclusao-do-ibs-e-da-cbs-das-bases-de-calculo-do-iss-e-do-icms/"
+      "url": "https://cnm.org.br/biblioteca/exibe/16782"
     },
     {
       "tag": "Prazo",
-      "titulo": "Termina em 30 de outubro o prazo para as empresas optantes do Simples Nacional escolherem o regime regular do IBS e da CBS, conforme a Resolução CGSN 194/2026 (a opção pelo próprio Simples encerrou-se em 15 de outubro)",
+      "titulo": "Última semana: termina em 30 de outubro o prazo para as empresas optantes do Simples Nacional escolherem o regime regular do IBS e da CBS, conforme a Resolução CGSN 194/2026",
       "fonte": "Confederação Nacional de Municípios",
       "data": "set/2026",
       "url": "https://cnm.org.br/comunicacao/noticias/prorrogado-o-prazo-de-opcao-pelo-simples-nacional-e-pelo-regime-regular-do-ibs-e-da-cbs"
