@@ -1,54 +1,54 @@
 {
-  "atualizado": "2026-10-26",
+  "atualizado": "2026-11-02",
   "itens": [
     {
       "tag": "Lei",
-      "titulo": "Rio de Janeiro publica o Decreto 50.473/2026, que reestrutura o licenciamento ambiental estadual (SELCA) para alinhá-lo à Lei Geral do Licenciamento (15.190/2025): novas modalidades de licença, renovação automática para baixo e médio impacto, prazos máximos de análise e tramitação totalmente eletrônica",
-      "fonte": "Migalhas",
+      "titulo": "Minas Gerais publica o Decreto 49.298/2026 com regras de transição para a Lei federal 15.190/2025: até a definição das tipologias de atividades, seguem valendo as modalidades de licença, procedimentos, prazos e critérios das normas estaduais, inclusive para processos já em andamento",
+      "fonte": "Agência Minas (Governo de MG)",
       "data": "out/2026",
-      "url": "https://www.migalhas.com.br/depeso/465893/rio-de-janeiro-publica-novo-decreto-de-licenciamento-ambiental"
+      "url": "https://www.agenciaminas.mg.gov.br/noticia/minas-gerais-estabelece-regras-de-transicao-para-o-licenciamento-ambiental"
     },
     {
       "tag": "Análise",
-      "titulo": "Artigo analisa o novo papel das unidades de conservação no licenciamento: a Lei 15.190/2025 encerra a autorização prévia dos órgãos gestores (como o ICMBio), que passam a atuar como autoridades envolvidas, com manifestação não vinculante",
+      "titulo": "Artigo sobre o novo papel das unidades de conservação: a Lei 15.190/2025 extingue a autorização prévia dos órgãos gestores, como o ICMBio, que passam a se manifestar de forma não vinculante",
       "fonte": "Consultor Jurídico",
       "data": "out/2026",
       "url": "https://conjur.com.br/2026-out-12/a-lei-geral-do-licenciamento-ambiental-e-o-fim-da-autorizacao-dos-orgaos-gestores-de-unidades-de-conservacao/"
     },
     {
+      "tag": "Prazo",
+      "titulo": "Nota técnica da CNM orienta a preparação dos cadastros imobiliários municipais para o Sinter e o CIB: pela LC 214/2025, Municípios que não são capitais devem integrar seus cadastros até 31/12/2026",
+      "fonte": "Confederação Nacional de Municípios",
+      "data": "set/2026",
+      "url": "https://cnm.org.br/storage/biblioteca/2026/Notas_Tecnicas/2026_NT_16_FIN_Sinter_CIB_preparacao_cadastro_imobiliarios_para_reforma_tributaria.pdf"
+    },
+    {
       "tag": "Tributário",
-      "titulo": "CNM publica a Nota Técnica CTAT 08/2026 orientando os Municípios a adaptar legislação e sistemas de ISS dos cartórios ao IBS: notas fiscais eletrônicas por ato notarial até 31/12/2026 e integração dos cadastros municipais ao Cadastro Imobiliário Brasileiro (CIB) para fiscalizar ISS e ITBI",
+      "titulo": "Nota técnica da CNM orienta municípios a adaptar o ISS dos cartórios ao IBS, com notas fiscais eletrônicas por ato notarial até 31/12/2026 e integração ao Cadastro Imobiliário Brasileiro (CIB)",
       "fonte": "Confederação Nacional de Municípios",
       "data": "out/2026",
       "url": "https://cnm.org.br/biblioteca/exibe/16782"
     },
     {
-      "tag": "Prazo",
-      "titulo": "Última semana: termina em 30 de outubro o prazo para as empresas optantes do Simples Nacional escolherem o regime regular do IBS e da CBS, conforme a Resolução CGSN 194/2026",
-      "fonte": "Confederação Nacional de Municípios",
-      "data": "set/2026",
-      "url": "https://cnm.org.br/comunicacao/noticias/prorrogado-o-prazo-de-opcao-pelo-simples-nacional-e-pelo-regime-regular-do-ibs-e-da-cbs"
-    },
-    {
-      "tag": "Saneamento",
-      "titulo": "ANA aprova a Norma de Referência nº 16/2026 (Resolução 302/2026), que institui a contabilidade regulatória no saneamento: reguladores infranacionais têm até 3 anos para incorporar as regras e os prestadores devem implantar os manuais até o exercício de 2032",
-      "fonte": "Mattos Filho",
-      "data": "set/2026",
-      "url": "https://www.mattosfilho.com.br/unico/agencia-aguas-contabilidade-saneamento/"
-    },
-    {
       "tag": "Municípios",
-      "titulo": "Porto Alegre lança o Programa Reurb+, com cerca de R$ 3,7 milhões para regularizar até 5.859 lotes: credenciamento inédito de múltiplas empresas para diagnósticos, levantamentos cartográficos e projetos de regularização fundiária",
+      "titulo": "Porto Alegre lança o Programa Reurb+, com cerca de R$ 3,7 milhões para regularizar até 5.859 lotes, com credenciamento de várias empresas para diagnósticos, levantamentos e projetos",
       "fonte": "Prefeitura de Porto Alegre",
       "data": "out/2026",
       "url": "https://prefeitura.poa.br/pgm/noticias/prefeitura-lanca-programa-reurb-nesta-quinta-feira"
     },
     {
+      "tag": "Saneamento",
+      "titulo": "ANA aprova norma que institui a contabilidade regulatória no saneamento: reguladores infranacionais têm três anos para incorporar as regras e prestadores devem implantar manuais até 2032",
+      "fonte": "Mattos Filho",
+      "data": "set/2026",
+      "url": "https://www.mattosfilho.com.br/unico/agencia-aguas-contabilidade-saneamento/"
+    },
+    {
       "tag": "Clima",
-      "titulo": "Painel El Niño 2026-2027 (INPE, Inmet, Cemaden e parceiros) publica 4º boletim: 95% de chance de El Niño 'muito forte' no trimestre outubro-dezembro, com chuva acima da média e risco de cheias no Sul e seca mais severa e risco de fogo no centro-norte do país",
-      "fonte": "INPE/MCTI",
+      "titulo": "Quinto boletim do Painel El Niño 2026-2027 indica evento forte a muito forte pelo menos até o primeiro trimestre de 2027, possivelmente o mais intenso desde 1950, com seca em avanço no Norte e no Nordeste, alto risco de queimadas e chuva acima da média no Sul",
+      "fonte": "Cemaden/MCTI",
       "data": "out/2026",
-      "url": "https://www.gov.br/inpe/pt-br/assuntos/ultimas-noticias/painel-el-nino-2026-2027-quarto-boletim-sobre-o-monitoramento-do-fenomeno-no-brasil-e-publicado"
+      "url": "https://www.gov.br/cemaden/pt-br/assuntos/monitoramento/el-nino/boletim-do-painel-el-nino-ndeg-05-outubro-de-2026-potenciais-impactos-e-orientacoes"
     }
   ]
 }
