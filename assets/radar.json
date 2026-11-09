@@ -1,19 +1,19 @@
 {
-  "atualizado": "2026-11-02",
+  "atualizado": "2026-11-09",
   "itens": [
     {
       "tag": "Lei",
-      "titulo": "Minas Gerais publica o Decreto 49.298/2026 com regras de transição para a Lei federal 15.190/2025: até a definição das tipologias de atividades, seguem valendo as modalidades de licença, procedimentos, prazos e critérios das normas estaduais, inclusive para processos já em andamento",
-      "fonte": "Agência Minas (Governo de MG)",
-      "data": "out/2026",
-      "url": "https://www.agenciaminas.mg.gov.br/noticia/minas-gerais-estabelece-regras-de-transicao-para-o-licenciamento-ambiental"
+      "titulo": "STF marca para o plenário virtual, de 27 de novembro a 4 de dezembro, o julgamento das ADIs 7.913, 7.916 e 7.919 e da ADC 102, que decidem a constitucionalidade da Lei Geral do Licenciamento Ambiental (Lei 15.190/2025) e da Licença Ambiental Especial (Lei 15.300/2025); ABRAMPA pede sessão presencial e audiência pública",
+      "fonte": "ABRAMPA",
+      "data": "nov/2026",
+      "url": "https://abrampa.org.br/stf-vai-decidir-se-lei-que-enfraquece-o-licenciamento-ambiental-e-constitucional-abrampa-pede-julgamento-presencial/"
     },
     {
-      "tag": "Análise",
-      "titulo": "Artigo sobre o novo papel das unidades de conservação: a Lei 15.190/2025 extingue a autorização prévia dos órgãos gestores, como o ICMBio, que passam a se manifestar de forma não vinculante",
-      "fonte": "Consultor Jurídico",
+      "tag": "Tributário",
+      "titulo": "Desde 1º de novembro, ME e EPP optantes do Simples Nacional são obrigadas a emitir a NFS-e de padrão nacional pelo Emissor Nacional (web ou API), conforme a Resolução CGSN 191/2026; municípios acompanham os documentos pelo Painel Municipal da NFS-e",
+      "fonte": "Fenacon",
       "data": "out/2026",
-      "url": "https://conjur.com.br/2026-out-12/a-lei-geral-do-licenciamento-ambiental-e-o-fim-da-autorizacao-dos-orgaos-gestores-de-unidades-de-conservacao/"
+      "url": "https://fenacon.org.br/reforma-tributaria/simples-nacional-nfs-e-nacional-sera-obrigatoria-para-me-e-epp-a-partir-de-1o-de-novembro-de-2026/"
     },
     {
       "tag": "Prazo",
@@ -23,11 +23,11 @@
       "url": "https://cnm.org.br/storage/biblioteca/2026/Notas_Tecnicas/2026_NT_16_FIN_Sinter_CIB_preparacao_cadastro_imobiliarios_para_reforma_tributaria.pdf"
     },
     {
-      "tag": "Tributário",
-      "titulo": "Nota técnica da CNM orienta municípios a adaptar o ISS dos cartórios ao IBS, com notas fiscais eletrônicas por ato notarial até 31/12/2026 e integração ao Cadastro Imobiliário Brasileiro (CIB)",
-      "fonte": "Confederação Nacional de Municípios",
+      "tag": "Análise",
+      "titulo": "Artigo discute a politização do licenciamento ambiental à luz da Lei 15.190/2025: a legalidade de uma licença depende de quem decide, dos estudos examinados e da fundamentação, e não do grau de controvérsia que ela gera",
+      "fonte": "Migalhas",
       "data": "out/2026",
-      "url": "https://cnm.org.br/biblioteca/exibe/16782"
+      "url": "https://www.migalhas.com.br/depeso/466683/quem-decide-o-que-a-politizacao-do-licenciamento-ambiental"
     },
     {
       "tag": "Municípios",
