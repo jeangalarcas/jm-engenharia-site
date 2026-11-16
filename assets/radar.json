@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-09",
+  "atualizado": "2026-11-16",
   "itens": [
     {
       "tag": "Lei",
@@ -9,11 +9,18 @@
       "url": "https://abrampa.org.br/stf-vai-decidir-se-lei-que-enfraquece-o-licenciamento-ambiental-e-constitucional-abrampa-pede-julgamento-presencial/"
     },
     {
-      "tag": "Tributário",
-      "titulo": "Desde 1º de novembro, ME e EPP optantes do Simples Nacional são obrigadas a emitir a NFS-e de padrão nacional pelo Emissor Nacional (web ou API), conforme a Resolução CGSN 191/2026; municípios acompanham os documentos pelo Painel Municipal da NFS-e",
-      "fonte": "Fenacon",
-      "data": "out/2026",
-      "url": "https://fenacon.org.br/reforma-tributaria/simples-nacional-nfs-e-nacional-sera-obrigatoria-para-me-e-epp-a-partir-de-1o-de-novembro-de-2026/"
+      "tag": "Saneamento",
+      "titulo": "Resolução ANA 312/2026 (DOU de 11/11) orienta a retirada do PIS/Cofins das tarifas de água e esgoto diante da reforma tributária: se o regulador local não publicar tabelas desoneradas até 15 de novembro, vale a trava de 9,25%, com diferenças recompostas depois por reequilíbrio ou compensação",
+      "fonte": "Agência iNFRA",
+      "data": "nov/2026",
+      "url": "https://agenciainfra.com/blog/tributaria-ana-preve-trava-de-retirada-de-pis-cofins-de-tarifa/"
+    },
+    {
+      "tag": "Clima",
+      "titulo": "INMET: El Niño atinge anomalia recorde de +2,47 °C na região Niño 3.4 em outubro, maior valor da série histórica para o mês, e o evento passa a ser classificado como muito forte, com alteração dos padrões de chuva e temperatura no Brasil e monitoramento contínuo recomendado",
+      "fonte": "INMET",
+      "data": "nov/2026",
+      "url": "https://portal.inmet.gov.br/noticias/el-niño-atinge-anomalia-recorde-para-outubro"
     },
     {
       "tag": "Prazo",
@@ -23,32 +30,25 @@
       "url": "https://cnm.org.br/storage/biblioteca/2026/Notas_Tecnicas/2026_NT_16_FIN_Sinter_CIB_preparacao_cadastro_imobiliarios_para_reforma_tributaria.pdf"
     },
     {
+      "tag": "Tributário",
+      "titulo": "Desde 1º de novembro, ME e EPP optantes do Simples Nacional são obrigadas a emitir a NFS-e de padrão nacional pelo Emissor Nacional (web ou API), conforme a Resolução CGSN 191/2026; municípios acompanham os documentos pelo Painel Municipal da NFS-e",
+      "fonte": "Fenacon",
+      "data": "out/2026",
+      "url": "https://fenacon.org.br/reforma-tributaria/simples-nacional-nfs-e-nacional-sera-obrigatoria-para-me-e-epp-a-partir-de-1o-de-novembro-de-2026/"
+    },
+    {
+      "tag": "Municípios",
+      "titulo": "Programa Minas Reurb avança em Ouro Fino (MG) com audiência pública no bairro Serrinha, etapa de identificação do núcleo urbano informal e instauração da Reurb; desde 2023, o programa estadual já emitiu mais de 16 mil títulos em 168 municípios",
+      "fonte": "Governo de Minas Gerais",
+      "data": "nov/2026",
+      "url": "https://desenvolvimento.mg.gov.br/noticias/audiencia-ouro-fino-minas-reurb"
+    },
+    {
       "tag": "Análise",
       "titulo": "Artigo discute a politização do licenciamento ambiental à luz da Lei 15.190/2025: a legalidade de uma licença depende de quem decide, dos estudos examinados e da fundamentação, e não do grau de controvérsia que ela gera",
       "fonte": "Migalhas",
       "data": "out/2026",
       "url": "https://www.migalhas.com.br/depeso/466683/quem-decide-o-que-a-politizacao-do-licenciamento-ambiental"
-    },
-    {
-      "tag": "Municípios",
-      "titulo": "Porto Alegre lança o Programa Reurb+, com cerca de R$ 3,7 milhões para regularizar até 5.859 lotes, com credenciamento de várias empresas para diagnósticos, levantamentos e projetos",
-      "fonte": "Prefeitura de Porto Alegre",
-      "data": "out/2026",
-      "url": "https://prefeitura.poa.br/pgm/noticias/prefeitura-lanca-programa-reurb-nesta-quinta-feira"
-    },
-    {
-      "tag": "Saneamento",
-      "titulo": "ANA aprova norma que institui a contabilidade regulatória no saneamento: reguladores infranacionais têm três anos para incorporar as regras e prestadores devem implantar manuais até 2032",
-      "fonte": "Mattos Filho",
-      "data": "set/2026",
-      "url": "https://www.mattosfilho.com.br/unico/agencia-aguas-contabilidade-saneamento/"
-    },
-    {
-      "tag": "Clima",
-      "titulo": "Quinto boletim do Painel El Niño 2026-2027 indica evento forte a muito forte pelo menos até o primeiro trimestre de 2027, possivelmente o mais intenso desde 1950, com seca em avanço no Norte e no Nordeste, alto risco de queimadas e chuva acima da média no Sul",
-      "fonte": "Cemaden/MCTI",
-      "data": "out/2026",
-      "url": "https://www.gov.br/cemaden/pt-br/assuntos/monitoramento/el-nino/boletim-do-painel-el-nino-ndeg-05-outubro-de-2026-potenciais-impactos-e-orientacoes"
     }
   ]
 }
