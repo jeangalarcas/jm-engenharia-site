@@ -7,7 +7,7 @@ Site one-page estático (HTML + CSS + JavaScript puros, sem build), hospedagem g
 
 ## Seções
 
-Início · Sobre · Serviços (9 frentes, formato problema → entrega) · Método · Diferenciais · Soluções B2B (due diligence de terrenos e parceria técnico-jurídica) · Vídeo (opcional) · Contato (formulário FormSubmit + WhatsApp).
+Início · Sobre · Quem atendemos (abas Setor Público e Setor Privado, com cards de serviços — incluindo as frentes de geologia: hidrogeologia, geologia ambiental, geotecnia/áreas contaminadas e mineração) · Método · Diferenciais · Soluções B2B (due diligence de terrenos e parceria técnico-jurídica) · Vídeo (opcional) · Contato (formulário FormSubmit + WhatsApp).
 
 ## Como editar
 
@@ -16,3 +16,7 @@ Início · Sobre · Serviços (9 frentes, formato problema → entrega) · Méto
 3. Commit + push na branch `main` ⇒ a Vercel publica automaticamente.
 
 Passo a passo completo de publicação: ver **GUIA_PUBLICACAO.md**.
+
+## Imagens
+
+As fotos dos cards de geologia (`assets/assets/geo-*.jpg`) são da coleção gratuita do Adobe Stock (licença padrão, uso comercial): IDs 124924696, 258833776, 489096930 e 470730354.
