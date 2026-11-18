@@ -237,8 +237,6 @@
     .c-card .ic{flex:none;width:46px;height:46px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(126,226,168,.2),rgba(62,201,184,.2));color:#7ee2a8}
     .c-card b{display:block;font-size:.92rem}
     .c-card span{font-size:.85rem;color:#b9c9de}
-    .li-badge{background:#fff;border-radius:16px;padding:8px;width:fit-content;margin-inline:auto;box-shadow:var(--shadow)}
-    .li-badge:empty{display:none}
     /* Título de destaque "Por que a JM?" */
     .why-h{font-size:clamp(2.2rem,4.2vw,3.2rem);margin-bottom:10px}
     .why-h em{font-style:normal;color:var(--green)}
@@ -846,9 +844,6 @@
         <div class="c-card">
           <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.4 8 12 8 12s8-6.6 8-12a8 8 0 0 0-8-8z"/></svg></span>
           <div><b>Área de atuação</b><span>Sede no Rio Grande do Sul · atuação em todo o Brasil</span></div>
-        </div>
-        <div class="li-badge">
-          <div class="badge-base LI-profile-badge" data-locale="pt_BR" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="jean-galar%C3%A7a-41763a180" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://br.linkedin.com/in/jean-galar%C3%A7a-41763a180?trk=profile-badge">Jean Galarça</a></div>
         </div>
       </div>
 
@@ -1600,14 +1595,6 @@
 
   /* Ano no rodapé */
   document.getElementById("ano").textContent = new Date().getFullYear();
-
-  /* Se o selo do LinkedIn não renderizar (bloqueio de cookies/rede), oculta a caixa */
-  setTimeout(() => {
-    const b = document.querySelector(".li-badge");
-    if (b && !b.querySelector("iframe")) b.style.display = "none";
-  }, 6000);
 </script>
-<!-- Selo oficial do LinkedIn -->
-<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 </body>
 </html>
